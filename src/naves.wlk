@@ -1,7 +1,7 @@
 class NaveDeCarga {
 
 	var velocidad = 0
-	var carga = 0
+	var property carga = 0
 
 	method sobrecargada() = carga > 100000
 
@@ -16,12 +16,12 @@ class NaveDeCarga {
 class NaveDePasajeros {
 
 	var velocidad = 0
-	var alarma = false
-	const cantidadDePasajeros
+	var property alarma = false
+	const cantidadDePasajeros = 0
 
 	method tripulacion() = cantidadDePasajeros + 4
 
-	method velocidadMaxima() = 600 * self.tripulacion() + if (cantidadDePasajeros > 50) 200 else 0
+	method velocidadMaxima() = 300000 / self.tripulacion() - if (cantidadDePasajeros > 100) 200 else 0
 
 	method estaEnPeligro() = velocidad > self.velocidadMaxima() or alarma
 
@@ -31,14 +31,16 @@ class NaveDePasajeros {
 
 }
 
-class NaveCombate {
-	var velocidad = 0
+class NaveDeCombate {
+	var property velocidad = 0
 	var property modo = reposo
 	const property mensajesEmitidos = []
 
 	method emitirMensaje(mensaje) {
 		mensajesEmitidos.add(mensaje)
 	}
+	
+	method ultimoMensaje() = mensajesEmitidos.last()
 
 	method estaInvisible() = velocidad < 10000 and modo.invisible()
 
@@ -53,7 +55,7 @@ object reposo {
 	method invisible() = false
 
 	method recibirAmenaza(nave) {
-		nave.emitirMensaje("RETIRADAAAAAA")
+		nave.emitirMensaje("¡RETIRADA!")
 	}
 
 }
