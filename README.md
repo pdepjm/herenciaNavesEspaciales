@@ -19,10 +19,24 @@ Nos piden extender el sistema anterior para agregar nuevas funcionalidades.
 
 1) Hacer que todas las naves se puedan _propulsar_, esto aumenta su velocidad en 20.000 kms/seg, pero nunca puede superar los 300.000 kms/seg, siendo este su máximo alcanzable.
 
-2) Aparecen un nuevo tipo de nave, las de **carga de residuos redioactivos**. Estas son como cualquier cualquier nave de carga común, solo que pueden sellarse al vacío para evitar desparramar residuos radioactivos por todo el espacio. Por esto mismo, al recibir una amenaza no deben liberar su carga, sino que se frenan (reduciendo su velocidad a 0) dispuestos a entregar la nave.
+> Testear que una nave de carga sin velocidad al propulsarse queda con una velocidad de 20.000 kms/seg. Y que una nave de pasajeros que viaja a 290.000 kms/seg al propulsarse queda viajando a 300.000 kms/seg.
 
-3) Hacer que todas las naves se puedan preparar para viajar. Esto hace que aumenten su velocidad 5.000 kms/seg (teniendo la restricción de la velocidad máxima posible). Además de eso,
+2) Aparecen un nuevo tipo de nave, las de **carga de residuos redioactivos**. Estas son como cualquier cualquier nave de carga común, solo que pueden sellarse al vacío para evitar desparramar residuos radioactivos por todo el espacio. Por esto mismo, al recibir una amenaza no deben liberar su carga, sino que frenan (reduciendo su velocidad a 0) dispuestos a entregar la nave.
+
+> Construir una nave que transporta 5.000 kg de redisuos radiactivos sellados al vacío a 10.000 kms/seg y testear que al recibir una amenaza frenan pero su carga sigue siendo la misma.
+
+3) Hacer que todas las naves se puedan preparar para viajar. Esto hace que aumenten su velocidad 15.000 kms/seg (teniendo la restricción de la velocidad máxima posible). Además de eso,
   - las naves que cargan residuos radioactivos se cierran al vacío.
   - y las de combate, si se encuentran en modo ataque emiten el mensaje `"Volviendo a la base"`, mientras que si están en reposo emiten el mensaje `"Saliendo en misión"` y se ponen en modo ataque.
-  
+
+> Testear que:
+> - Una nave de pasajeros que viaja a 290.000 kms/seg al prepararse para viajar queda con velocidad de 300.000 kms/seg.
+> - Una nave de residuos radiactivos sin velocidad y que **no** está sellada al prepararse para viajar queda con velocidad de 15.000 kms/seg y sellada al vacío.
+> - Una nave de combate en modo ataque sin velocidad al prepararse para viajar emite el mensaje `"Volviendo a la base"` y queda con velocidad de 15.000 kms/seg
+> - Una nave de combate en modo reposo sin velocidad al prepararse para viajar emite el mensaje `"Saliendo en misión"`, queda en modo ataque y con velocidad de 15.000 kms/seg
+
 4) Hacer que una nave se encuentre con un enemigo. Esto les hace recibir una amenaza, sufriendo los efectos particulares de cada nave, y luego se propulsan para intentar escapar.
+
+> Testear que una nave de pasajeros sin velocidad al encontrarse con un enemigo queda con velocidad de 20.000 kms/seg y su alarma en caso de emergencia activada.
+
+> Para pensar: ¿Hace falta testear más casos?
