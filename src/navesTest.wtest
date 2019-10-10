@@ -34,11 +34,11 @@ describe "Nave de pasajeros" {
 	const naveConPasajeros = new NaveDePasajeros(cantidadDePasajeros = 296, velocidad = 290000)
 
 	test "velocidad maxima sin pasajeros" {
-		assert.equals(75000, naveSinPasajeros.velocidadMaxima())
+		assert.equals(75000, naveSinPasajeros.velocidadMaximaLegal())
 	}
 
 	test "velocidad maxima con pasajeros" {
-		assert.equals(1000 - 200, naveConPasajeros.velocidadMaxima())
+		assert.equals(1000 - 200, naveConPasajeros.velocidadMaximaLegal())
 	}
 
 	test "esta en peligro" {
