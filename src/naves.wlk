@@ -21,9 +21,9 @@ class NaveDePasajeros {
 
 	method tripulacion() = cantidadDePasajeros + 4
 
-	method velocidadMaxima() = 300000 / self.tripulacion() - if (cantidadDePasajeros > 100) 200 else 0
+	method velocidadMaximaLegal() = 300000 / self.tripulacion() - if (cantidadDePasajeros > 100) 200 else 0
 
-	method estaEnPeligro() = velocidad > self.velocidadMaxima() or alarma
+	method estaEnPeligro() = velocidad > self.velocidadMaximaLegal() or alarma
 
 	method recibirAmenaza() {
 		alarma = true
