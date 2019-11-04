@@ -6,7 +6,7 @@ En un futuro distante, donde las actividades se derrollan en un ambiente interpl
 
 De las naves conocemos su velocidad, medida en _kms/seg_; y, por ahora, nos pidieron modelar los siguientes tipos:
 
-- **Naves de carga**: nos interesa saber la masa de la carga que está transportando, medida en kg. Se desea saber si la nave está sobrecargada, que sucede cuando su carga excede 100 toneladas; y si está excedida de velocidad. La velocidad máxima a la que puede ir este tipo de naves es de 100.000 kms/seg. Cuando estas naves reciben una amenaza se deshacen de toda su carga, dejándola vacía.
+- **Naves de carga**: nos interesa saber la masa de la carga que está transportando, medida en kg. Se desea saber si la nave está sobrecargada, que sucede cuando su carga excede 100 toneladas; y si está excedida de velocidad. Sabemos este tipo de naves que están excedidas de velocidad cuando viajan a más de 100.000 kms/seg. Cuando estas naves reciben una amenaza se deshacen de toda su carga, dejándola vacía.
 
 - **Naves de pasajeros**: lleva consigo una determinada cantidad de pasajeros + 4 personas destinadas a ser personal de la nave. Cuando estas naves reciben una amenaza simplemente activan su alarma en caso de emergencia. Se desea conocer la velocidad máxima legal a la que puede viajar, que es de 300.000 kms/seg divido la cantidad de personas dentro de la nave (pasajeros + personal de la nave), además se descuenta 200 kms/seg más si hay más de 100 pasajeros, por cuestiones de seguridad. Y saber si la nave está en peligro, que sucede cuando va más rápido que su velocidad máxima legal o la alarma en caso de emergencia está encendida.
 
