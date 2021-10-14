@@ -34,27 +34,32 @@ class NaveDePasajeros {
 class NaveDeCombate {
 	var property velocidad = 0
 	var property modo = reposo
+	var property armasDesplegadas = false
 	const property mensajesEmitidos = []
 
 	method emitirMensaje(mensaje) {
 		mensajesEmitidos.add(mensaje)
 	}
 	
+	method activarArmas() {
+		armasDesplegadas = true
+	}
+	
 	method ultimoMensaje() = mensajesEmitidos.last()
 
-	method estaInvisible() = velocidad < 10000 and modo.invisible()
+	method estaInvisible() = modo.invisible(self)
 
 	method recibirAmenaza() {
-		modo.recibirAmenaza(self)
+		modo.recibeAmenaza(self)
 	}
 
 }
 
 object reposo {
 
-	method invisible() = false
+	method invisible(nave) = nave.velocidad() < 10000
 
-	method recibirAmenaza(nave) {
+	method recibeAmenaza(nave) {
 		nave.emitirMensaje("¡RETIRADA!")
 	}
 
@@ -62,10 +67,11 @@ object reposo {
 
 object ataque {
 
-	method invisible() = true
+	method invisible(nave) = not nave.armasDesplegadas()
 
-	method recibirAmenaza(nave) {
+	method recibeAmenaza(nave) {
 		nave.emitirMensaje("Enemigo encontrado")
+		nave.activarArmas()
 	}
 
 }
